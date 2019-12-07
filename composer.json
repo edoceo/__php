@@ -1,0 +1,15 @@
+{
+	"name": "edoceo/__php",
+	"description": "Magic Global Functions",
+	"license": "MIT",
+	"autoload": {
+		"files": [
+			"lib/__.php"
+		]
+	},
+	"require": {
+		"php": ">=7.0.0"
+		"ext-curl": "*",
+		"ext-json": "*",
+	}
+}
