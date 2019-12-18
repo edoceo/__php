@@ -85,7 +85,7 @@ function __curl_init($u)
 	@param $d Date/Time
 	@param $tz Time Zone
 */
-function _date($f, $d=null, $tz=null)
+function __date($f, $d=null, $tz=null)
 {
 	$r = $d;
 
