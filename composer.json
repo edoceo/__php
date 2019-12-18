@@ -1,5 +1,5 @@
 {
-	"name": "edoceo/__php",
+	"name": "edoceo/php_magic",
 	"description": "Magic Global Functions",
 	"license": "MIT",
 	"autoload": {
