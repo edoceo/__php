@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"autoload": {
 		"files": [
-			"lib/__.php"
+			"__.php"
 		]
 	},
 	"require": {
