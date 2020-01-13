@@ -1,5 +1,5 @@
 {
-	"name": "edoceo/double_underscore_php",
+	"name": "edoceo/php_underbar",
 	"description": "Magic Global Functions",
 	"license": "MIT",
 	"autoload": {
