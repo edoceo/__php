@@ -1,5 +1,5 @@
 {
-	"name": "edoceo/php_underbar",
+	"name": "edoceo/lowline_php",
 	"description": "Magic Global Functions",
 	"license": "MIT",
 	"autoload": {
