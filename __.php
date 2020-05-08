@@ -155,7 +155,7 @@ function __json_decode($x)
  */
 function __json_encode($x)
 {
-	return json_encode($x, JSON_INVALID_UTF8_IGNORE | JSON_NUMERIC_CHECK | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+	return json_encode($x, JSON_INVALID_UTF8_IGNORE | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 }
 
 
