@@ -276,7 +276,7 @@ function __exit_html($html, $code=200)
 {
 	while (ob_get_level()) ob_end_clean();
 
-	__head_code($code);
+	__exit_code($code);
 
 	header('Content-Type: text/html');
 
@@ -289,7 +289,7 @@ function __exit_json($data, $code=200)
 {
 	while (ob_get_level()) ob_end_clean();
 
-	__head_code($code);
+	__exit_code($code);
 
 	header('Content-Type: application/json', true);
 
@@ -306,7 +306,7 @@ function __exit_text($text, $code=200)
 {
 	while (ob_get_level()) ob_end_clean();
 
-	__head_code($code);
+	__exit_code($code);
 
 	header('Content-Type: text/plain');
 
@@ -320,7 +320,7 @@ function __exit_text($text, $code=200)
 /**
 	Sets the HTTP Header Code
 */
-function __head_code($code)
+function __exit_code($code)
 {
 	$map_code = array(
 		200 => 'OK',
