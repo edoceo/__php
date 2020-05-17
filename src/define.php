@@ -1,0 +1,8 @@
+<?php
+/**
+ * Define a some Constants
+ */
+
+define('__RE_BASE32_CROCKFORD', '/^[0123456789ABCDEFGHJKMNPQRSTVWXYZ]+$/');
+define('__RE_BASE32_RFC4648',   '/^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]+$/');
+define('__RE_BASE32_Z',         '/^[ABCDEFGHIJKLMNOPQRSTUVWXYZ234567]+$/');
