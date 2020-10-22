@@ -278,7 +278,7 @@ function __exit_html($html, $code=200)
 
 	__exit_code($code);
 
-	header('Content-Type: text/html');
+	header('content-type: text/html');
 
 	echo $html;
 
@@ -291,9 +291,14 @@ function __exit_json($data, $code=200)
 
 	__exit_code($code);
 
-	header('Content-Type: application/json', true);
+	if (!is_string($data)) {
+		$data = __json_encode($data);
+	}
 
-	echo __json_encode($data);
+	header('cache-control: no-cache');
+	header('content-type: application/json', true);
+
+	echo $data;
 
 	exit(0);
 }
@@ -308,11 +313,14 @@ function __exit_text($text, $code=200)
 
 	__exit_code($code);
 
-	header('Content-Type: text/plain');
+	if (!is_string($text)) {
+		$text = json_encode($text, JSON_INVALID_UTF8_IGNORE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+	}
+
+	header('cache-control: no-cache');
+	header('content-type: text/plain');
 
 	echo $text;
-
-	echo "\n";
 
 	exit(0);
 }
