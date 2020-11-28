@@ -32,12 +32,12 @@ function __base64_decode_url($x)
 function __encrypt($d, $k=null)
 {
 	$d = openssl_encrypt($d, 'AES-256-ECB', $k, true);
-	return base64_encode_url($d);
+	return __base64_encode_url($d);
 }
 
 function __decrypt($d, $k=null)
 {
-	$d = base64_decode_url($d);
+	$d = __base64_decode_url($d);
 	return trim(openssl_decrypt($d, 'AES-256-ECB', $k, true));
 }
 
