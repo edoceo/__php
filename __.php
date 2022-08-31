@@ -7,7 +7,7 @@
 /*
  * Wrapper for htmlentities
  */
-function __h($x)
+function __h($x) : string
 {
 	return htmlentities($x, ENT_QUOTES, 'UTF-8', true);
 }
@@ -16,12 +16,12 @@ function __h($x)
 /**
  * Wrapper for base64 encode, url-safe
  */
-function __base64_encode_url($x)
+function __base64_encode_url($x) : string
 {
 	return rtrim(strtr(base64_encode($x), '+/', '-_'), '=');
 }
 
-function __base64_decode_url($x)
+function __base64_decode_url($x) : string
 {
 	return base64_decode(str_pad(strtr($x, '-_', '+/'), (strlen($x) % 4), '=', STR_PAD_RIGHT));
 }
@@ -144,7 +144,7 @@ function __date($f, $d=null, $tz=null)
 /**
  * WapperJSON decode to array type
  */
-function __json_decode($x)
+function __json_decode(string $x)
 {
 	return json_decode($x, true, 512, JSON_INVALID_UTF8_IGNORE | JSON_OBJECT_AS_ARRAY);
 }
@@ -153,16 +153,16 @@ function __json_decode($x)
 /*
  * Wapper for json_encode
  */
-function __json_encode($x)
+function __json_encode($x, int $f=0)
 {
-	return json_encode($x, JSON_INVALID_UTF8_IGNORE | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+	return json_encode($x, JSON_INVALID_UTF8_IGNORE | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | $f);
 }
 
 
 /**
  * Wrapper for parse_str to not leak vars
  */
-function __parse_str($x)
+function __parse_str(string $x)
 {
 	$r = array();
 	parse_str($x, $r);
