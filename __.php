@@ -171,9 +171,9 @@ function __parse_str(string $x)
 
 
 /**
-	Sort a Keyed Array, Recursively
-	@return bool
-*/
+ * Sort a Keyed Array, Recursively
+ * @return bool
+ */
 function __ksort_r(&$array)
 {
 	foreach ($array as &$value) {
@@ -270,8 +270,8 @@ function __text_stub($x)
 
 
 /**
-	Exit with Text Content
-*/
+ * Exit with HTML Content
+ */
 function __exit_html($html, $code=200)
 {
 	while (ob_get_level()) ob_end_clean();
@@ -285,6 +285,9 @@ function __exit_html($html, $code=200)
 	exit(0);
 }
 
+/**
+ * Exit with JSON Content
+ */
 function __exit_json($data, $code=200)
 {
 	while (ob_get_level()) ob_end_clean();
@@ -305,8 +308,8 @@ function __exit_json($data, $code=200)
 
 
 /**
-	Exit with Text Content
-*/
+ * Exit with Text Content
+ */
 function __exit_text($text, $code=200)
 {
 	while (ob_get_level()) ob_end_clean();
@@ -326,8 +329,8 @@ function __exit_text($text, $code=200)
 }
 
 /**
-	Sets the HTTP Header Code
-*/
+ * Sets the HTTP Header Code
+ */
 function __exit_code($code)
 {
 	$map_code = array(
@@ -357,8 +360,8 @@ function __exit_code($code)
 }
 
 /**
-	Determine which MIME type the request wants
-*/
+ * Determine which MIME type the request wants
+ */
 function __mime_type_want()
 {
 	$want_list = explode(',', $_SERVER['HTTP_ACCEPT']);
