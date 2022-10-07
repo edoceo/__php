@@ -144,7 +144,7 @@ function __date($f, $d=null, $tz=null)
 /**
  * WapperJSON decode to array type
  */
-function __json_decode(string $x)
+function __json_decode(?string $x)
 {
 	return json_decode($x, true, 512, JSON_INVALID_UTF8_IGNORE | JSON_OBJECT_AS_ARRAY);
 }
