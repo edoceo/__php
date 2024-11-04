@@ -9,7 +9,8 @@
  */
 function __h($x) : string
 {
-	return htmlentities($x, ENT_QUOTES, 'UTF-8', true);
+	$x = htmlentities($x, ENT_QUOTES, 'UTF-8', true);
+	return (string)$x;
 }
 
 
